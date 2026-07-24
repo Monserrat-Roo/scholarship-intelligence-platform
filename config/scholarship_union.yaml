@@ -1,0 +1,25 @@
+name: Scholarship Union
+
+base_url: "https://scholarshipunion.com"
+
+listing_url: "https://scholarshipunion.com/scholarships-list/"
+
+pagination: true
+
+listing:
+
+  card_selector: "article.up-listing-card"
+
+  title_selector: "h3 a"
+
+  description_selector: "p.text-sm"
+
+  deadline_selector: "span.inline-flex.items-center"
+
+timeouts:
+
+  request: 30
+
+headers:
+
+  user_agent: "Scholarship Intelligence Platform"

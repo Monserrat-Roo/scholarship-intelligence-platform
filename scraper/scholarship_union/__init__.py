@@ -1,0 +1,3 @@
+"""
+Scholarship Union scraper package.
+"""
