@@ -1,23 +1,28 @@
-"""
-Scraper for Scholarship Union listing pages.
-"""
-
-from bs4 import BeautifulSoup
-
 from scraper.base_scraper import BaseScraper
-
 from scraper.http_client import HTTPClient
-
 from scraper.dto.opportunity_listing import OpportunityListing
+
+from scraper.extractors.html import create_soup
+from scraper.extractors.text import extract_text
+from scraper.extractors.links import extract_href
+
+from config.loader import ScraperConfig
 
 
 class ScholarshipUnionListScraper(BaseScraper):
 
-    def __init__(self, url: str):
+    def __init__(self):
 
-        self.url = url
+        self.config = ScraperConfig(
+            "scholarship_union.yaml"
+        )
 
         self.client = HTTPClient()
+
+        self.url = self.config.get(
+            "listing",
+            "url",
+        )
 
     def fetch(self):
 
@@ -25,20 +30,29 @@ class ScholarshipUnionListScraper(BaseScraper):
 
     def parse(self, html):
 
-        soup = BeautifulSoup(
-            html,
-            "html.parser"
+        soup = create_soup(html)
+
+        cards = soup.select(
+
+            self.config.get(
+                "listing",
+                "card_selector",
+            )
+
         )
 
         opportunities = []
 
-        cards = soup.select(
-            "article.up-listing-card"
-        )
-
         for card in cards:
 
-            link = card.select_one("h3 a")
+            link = card.select_one(
+
+                self.config.get(
+                    "listing",
+                    "title_selector",
+                )
+
+            )
 
             if not link:
                 continue
@@ -47,9 +61,14 @@ class ScholarshipUnionListScraper(BaseScraper):
 
                 OpportunityListing(
 
-                    title=link.text.strip(),
+                    title=extract_text(link),
 
-                    detail_url=link.get("href")
+                    detail_url=extract_href(
+                        link,
+                        self.config.get(
+                            "base_url"
+                        ),
+                    ),
                 )
 
             )
