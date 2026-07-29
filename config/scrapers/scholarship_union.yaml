@@ -2,11 +2,9 @@ name: Scholarship Union
 
 base_url: "https://scholarshipunion.com"
 
-listing_url: "https://scholarshipunion.com/scholarships-list/"
-
-pagination: true
-
 listing:
+
+  url: "https://scholarshipunion.com/scholarships-list/"
 
   card_selector: "article.up-listing-card"
 
@@ -14,12 +12,26 @@ listing:
 
   description_selector: "p.text-sm"
 
-  deadline_selector: "span.inline-flex.items-center"
+  country_selector: "a[href*='/category/countries/']"
 
-timeouts:
+  deadline_selector: "time"
 
-  request: 30
+detail:
 
-headers:
+  page_selector: "article"
 
-  user_agent: "Scholarship Intelligence Platform"
+  title_selector: "h1"
+
+  official_link_selector: "a[href*='http']"
+
+filters:
+
+  ignored_paths:
+
+    - "/how-to/"
+
+    - "/tips/"
+
+    - "/guide/"
+
+    - "/blog/"
