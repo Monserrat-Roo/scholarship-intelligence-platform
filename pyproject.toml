@@ -1,0 +1,14 @@
+[project]
+name = "scholarship-intelligence-platform"
+version = "0.1.0"
+description = "Scholarship Intelligence Platform"
+requires-python = ">=3.13"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.isort]
+profile = "black"

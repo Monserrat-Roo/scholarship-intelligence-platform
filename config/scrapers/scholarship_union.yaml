@@ -1,0 +1,37 @@
+name: Scholarship Union
+
+base_url: "https://scholarshipunion.com"
+
+listing:
+
+  url: "https://scholarshipunion.com/scholarships-list/"
+
+  card_selector: "article.up-listing-card"
+
+  title_selector: "h3 a"
+
+  description_selector: "p.text-sm"
+
+  country_selector: "a[href*='/category/countries/']"
+
+  deadline_selector: "time"
+
+detail:
+
+  page_selector: "article"
+
+  title_selector: "h1"
+
+  official_link_selector: "a[href*='http']"
+
+filters:
+
+  ignored_paths:
+
+    - "/how-to/"
+
+    - "/tips/"
+
+    - "/guide/"
+
+    - "/blog/"
