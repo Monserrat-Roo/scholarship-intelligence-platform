@@ -16,22 +16,57 @@ listing:
 
   deadline_selector: "time"
 
+
 detail:
 
   page_selector: "article"
 
   title_selector: "h1"
 
-  official_link_selector: "a[href*='http']"
+  deadline_selector: "time"
+
+  official_link_text:
+    - "Apply on the official website"
+    - "Apply Now"
+    - "Official Website"
+
+
+sections:
+
+  benefits:
+    - "Benefits"
+    - "Scholarship Benefits"
+    - "Financial Benefits"
+    - "What the Scholarship Covers"
+
+  eligibility:
+    - "Eligibility"
+    - "Scholarship Eligibility"
+    - "Eligibility Criteria"
+
+  requirements:
+    - "Required Documents"
+    - "Requirements"
+    - "Application Requirements"
+
+  field:
+    - "Eligible Fields"
+    - "Fields of Study"
+    - "Eligible Programs"
+
+  application:
+    - "How to Apply"
+    - "Application Process"
+    - "Application Procedure"
+
 
 filters:
 
   ignored_paths:
-
     - "/how-to/"
-
     - "/tips/"
-
     - "/guide/"
-
     - "/blog/"
+
+  ignored_categories:
+    - "blog"
