@@ -28,21 +28,13 @@ class OpportunityMapper:
 
             title=listing.title,
 
-            opportunity_type="Unknown",
+            source="Scholarship Union",
+
+            source_url=listing.detail_url,
 
             organization=details.organization,
 
-            country=details.country,
-
-            field=details.field,
-
-            status=details.status,
-
-            application_open_date=details.application_open_date,
-
-            application_deadline=details.application_deadline,
-
-            funding_type=details.funding_type,
+            opportunity_type="scholarship",
 
             benefits=details.benefits,
 
@@ -50,9 +42,7 @@ class OpportunityMapper:
 
             requirements=details.requirements,
 
-            source="Scholarship Union",
-
-            source_url=listing.detail_url,
+            application_deadline=details.application_deadline,
 
             official_url=details.official_url,
         )

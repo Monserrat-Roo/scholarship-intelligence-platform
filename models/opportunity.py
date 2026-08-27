@@ -33,7 +33,7 @@ class OpportunityRecord:
     funding_type: str | None = None
     benefits: str | None = None
 
-    elegibility_criteria: str | None = None
+    eligibility_criteria: str | None = None
     requirements: str | None = None
 
     source: str = ""
