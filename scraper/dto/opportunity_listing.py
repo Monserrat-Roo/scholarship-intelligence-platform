@@ -1,4 +1,4 @@
- """
+"""
 Represents a scholarship card extracted from a listing page.
 """
 

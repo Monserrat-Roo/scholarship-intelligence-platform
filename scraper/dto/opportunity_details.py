@@ -1,6 +1,6 @@
 """
 Represents the complete information extracted
-from a scholarship detail page.
+from a scholarship opportunity detail page.
 """
 
 from dataclasses import dataclass
@@ -11,6 +11,8 @@ from datetime import date
 class OpportunityDetails:
 
     title: str
+
+    opportunity_type: str | None = None
 
     organization: str | None = None
 
