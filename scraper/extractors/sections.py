@@ -53,3 +53,42 @@ def extract_section(
             )
 
     return ""
+
+def extract_labeled_value(
+    soup: BeautifulSoup,
+    label: str,
+) -> str:
+    """
+    Extracts the value associated with a labeled <dt> element.
+
+    Example:
+
+        <dt>Deadline</dt>
+        <dd>7 September 2026</dd>
+
+    Parameters
+    ----------
+    soup : BeautifulSoup
+        Parsed HTML document.
+
+    label : str
+        Label to search for.
+
+    Returns
+    -------
+    str
+        Associated text value, or an empty string if not found.
+    """
+
+    labels = soup.find_all("dt")
+
+    for element in labels:
+
+        if extract_text(element).strip().lower() == label.lower():
+
+            value = element.find_next_sibling("dd")
+
+            if value is not None:
+                return extract_text(value)
+
+    return ""
