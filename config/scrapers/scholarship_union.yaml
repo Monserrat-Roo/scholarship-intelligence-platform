@@ -23,13 +23,15 @@ detail:
 
   title_selector: "h1"
 
-  deadline_selector: "time"
+  official_link_selector: "a[href*='http']"
 
-  official_link_text:
-    - "Apply on the official website"
-    - "Apply Now"
-    - "Official Website"
+  official_link_text: "Apply on the official site"
 
+  official_link_texts:
+  - "Apply on the official site"
+  - "Apply on the official website"
+
+deadline_label: "Deadline"
 
 sections:
 
@@ -59,7 +61,6 @@ sections:
     - "Application Process"
     - "Application Procedure"
 
-
 filters:
 
   ignored_paths:
@@ -70,3 +71,42 @@ filters:
 
   ignored_categories:
     - "blog"
+
+opportunity_types:
+
+  scholarship:
+    - scholarship
+    - scholars
+    - scholarship program
+
+  fellowship:
+    - fellowship
+    - fellow
+
+  internship:
+    - internship
+    - intern
+
+  research:
+    - research opportunity
+    - research assistant
+    - research associate
+    - research fellowship
+
+  summer_program:
+    - summer program
+    - summer school
+    - winter camp
+
+  course:
+    - online course
+    - course
+    - training
+
+  volunteer:
+    - volunteer
+    - volunteering
+
+  conference:
+    - conference
+    - forum
